@@ -1,0 +1,81 @@
+$primary: #ef7365;
+$secondary: slategray;
+
+body {
+  background: #eee;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  padding: 1em;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+.user-list {
+  background: white;
+  box-shadow: 1px 2px 3px #00000017;
+  padding: 1em;
+  .user-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:nth-child(2n-1) {
+      background: #00000008;
+    }
+    &:hover {
+      background: $secondary;
+      color: white;
+      border-color: $secondary;
+    }
+    .nr {
+      opacity: 0.5;
+      width: 2em;
+      text-align: center;
+      display: inline-block;
+      margin-left: -1em;
+    }
+    .icon {
+      color: white;
+      background: #0000005e;
+      padding: 0.2em;
+      border-radius: 2em;
+      float: right;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+button {
+  font-size: inherit;
+  color: white;
+  padding: 1em 1.5em;
+  border: none;
+  outline: none;
+  border-radius: 2em;
+  &.pr {
+    background: $primary;
+  }
+  &.sec {
+    background: $secondary;
+  }
+}
+
+.btn-wrap {
+  margin-top: 1em;
+  text-align: right;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0.8em;
+  opacity: 0.5;
+  font-family: monospace;
+  text-align: center;
+  padding: 0.75em 1em;
+}
