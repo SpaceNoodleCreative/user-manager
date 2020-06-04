@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MdLocationOn, MdLocalPhone, MdEmail } from "react-icons/md";
 import Detail from "./Detail";
+import ListItem from "./ListItem";
 
 interface Props {
   users: any[];
@@ -12,12 +13,7 @@ const List = (props: Props) => {
     <div className="user-list">
       {users.map((item, index) => (
         <React.Fragment key={item.id}>
-          <div className="user-item">
-            <span className="nr">{index + 1}</span> {item.name}
-            {item.email && <MdEmail className="icon-circle" />}
-            {item.phone && <MdLocalPhone className="icon-circle" />}
-            {item.address && <MdLocationOn className="icon-circle" />}
-          </div>
+          <ListItem {...item} index={index} />
           <Detail {...item} />
         </React.Fragment>
       ))}
