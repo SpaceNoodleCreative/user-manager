@@ -92,6 +92,7 @@ button {
 }
 
 .user-detail {
+  display: none;
   background: white;
   padding: 1em;
   border: 1em solid $lightergray;
@@ -119,12 +120,19 @@ button {
     padding-bottom: 1em;
   }
   h1 {
-    color: $primary;
+    color: $secondary;
   }
   .sub {
     margin-top: -0.75em;
     margin-bottom: 1em;
     color: slategray;
+  }
+  .gen-icon {
+    color: $primary;
+    font-size: 1.5em;
+    vertical-align: -0.25em;
+    margin-right: 0.25em;
+    opacity: 0.8;
   }
   .details-item {
     margin-bottom: 0.5em;

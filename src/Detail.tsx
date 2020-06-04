@@ -10,9 +10,23 @@ import {
 } from "react-icons/md";
 import { IoMdFemale, IoMdMale } from "react-icons/io";
 
-interface Props {}
+interface Props {
+  id: string;
+  name?: string;
+  email?: string;
+  phone?: string;
+  address?: {
+    suite?: string;
+    street?: string;
+    zipcode?: string;
+    city?: string;
+  };
+}
 
-const Detail = (props: Props) => {
+const Detail = ({ id, name, email, phone, address }: Props) => {
+  const streetAddress = address
+    ? `${address.suite} ${address.street} ${address.zipcode} ${address.city} `
+    : null;
   return (
     <div className="user-detail">
       <div className="pic">
@@ -20,17 +34,20 @@ const Detail = (props: Props) => {
         <img src={girlIcon} />
       </div>
       <div className="text">
-        <h1>User Name</h1>
-        <div className="sub">Female, 25 y.o.</div>
-        <div className="details-item">
-          <MdEmail className="icon-circle" /> <span>email@email.com</span>
+        <h1>{name}</h1>
+        <div className="sub">
+          <IoMdFemale className="gen-icon" />
+          {/* <IoMdMale className="gen-icon" /> */}
+          25 y.o.
         </div>
         <div className="details-item">
-          <MdLocalPhone className="icon-circle" /> <span>0629502920</span>
+          <MdEmail className="icon-circle" /> <span>{email}</span>
         </div>
         <div className="details-item">
-          <MdLocationOn className="icon-circle" />{" "}
-          <span>Home address 1234 Amsterdam</span>
+          <MdLocalPhone className="icon-circle" /> <span>{phone}</span>
+        </div>
+        <div className="details-item">
+          <MdLocationOn className="icon-circle" /> <span>{streetAddress}</span>
         </div>
       </div>
       <div className="btn-wrap">
@@ -46,3 +63,6 @@ const Detail = (props: Props) => {
 };
 
 export default Detail;
+
+// to do:
+// - show fields if not empty
