@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.scss";
 import List from "./List";
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcApproval } from "react-icons/fc";
+import { MdAdd } from "react-icons/md";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -12,10 +13,14 @@ function App() {
   }
   return (
     <div>
-      <h2>SimpleCRM</h2>
+      <h2 className="header">
+        <FcApproval /> SimpleCRM
+      </h2>
       {users.length && <List users={users} />}
       <div className="btn-wrap">
-        <button className="pr">+ Add</button>
+        <button className="pr">
+          <MdAdd /> Add
+        </button>
       </div>
       <footer>
         Made with <FcLike />

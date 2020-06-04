@@ -1,16 +1,63 @@
 $primary: #ef7365;
 $secondary: slategray;
+$border: #ddd;
+$lightgray: #eee;
+$lightergray: #f7f7f7;
 
 body {
-  background: #eee;
+  background: $lightgray;
   color: #333;
   font-family: Arial, sans-serif;
   font-size: 15px;
   padding: 1em;
 }
 
-h2 {
-  font-weight: lighter;
+.icon-circle {
+  color: white;
+  background: #0000005e;
+  padding: 0.2em;
+  border-radius: 2em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+button {
+  font-size: inherit;
+  color: white;
+  padding: 1em 1.5em;
+  border: none;
+  outline: none;
+  border-radius: 2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &.pr {
+    background: $primary;
+  }
+  &.sec {
+    background: $secondary;
+  }
+  svg {
+    font-size: 1.5em;
+    margin-right: 0.4em;
+    vertical-align: middle;
+  }
+}
+
+.btn-wrap {
+  margin-top: 1em;
+  text-align: right;
+  button {
+    margin-left: 0.75em;
+  }
+}
+
+.header {
+  color: $secondary;
+  svg {
+    font-size: 1.5em;
+    vertical-align: -0.25em;
+  }
 }
 
 .user-list {
@@ -18,12 +65,12 @@ h2 {
   box-shadow: 1px 2px 3px #00000017;
   padding: 1em;
   .user-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $border;
     padding: 1em 1.5em;
     cursor: pointer;
     transition: all 0.2s;
     &:nth-child(2n-1) {
-      background: #00000008;
+      background: $lightergray;
     }
     &:hover {
       background: $secondary;
@@ -37,35 +84,61 @@ h2 {
       display: inline-block;
       margin-left: -1em;
     }
-    .icon {
-      color: white;
-      background: #0000005e;
-      padding: 0.2em;
-      border-radius: 2em;
+    .icon-circle {
       float: right;
       margin-left: 0.5em;
     }
   }
 }
 
-button {
-  font-size: inherit;
-  color: white;
-  padding: 1em 1.5em;
-  border: none;
-  outline: none;
-  border-radius: 2em;
-  &.pr {
-    background: $primary;
+.user-detail {
+  background: white;
+  padding: 1em;
+  border: 1em solid $lightergray;
+  .pic {
+    background: #eee;
+    float: left;
+    margin: 1em 2em 2em 1em;
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+    padding: 0 0.75em;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    img {
+      display: block;
+      max-width: 100%;
+    }
   }
-  &.sec {
-    background: $secondary;
+  .text {
+    min-height: 10em;
+    padding-left: 13em;
+    padding-bottom: 1em;
   }
-}
-
-.btn-wrap {
-  margin-top: 1em;
-  text-align: right;
+  h1 {
+    color: $primary;
+  }
+  .sub {
+    margin-top: -0.75em;
+    margin-bottom: 1em;
+    color: slategray;
+  }
+  .details-item {
+    margin-bottom: 0.5em;
+    .icon-circle {
+      margin-right: 0.4em;
+    }
+    span {
+      vertical-align: middle;
+    }
+  }
+  .btn-wrap {
+    border-top: 1px solid $border;
+    padding-top: 1em;
+  }
 }
 
 footer {
@@ -78,4 +151,19 @@ footer {
   font-family: monospace;
   text-align: center;
   padding: 0.75em 1em;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+  .user-detail {
+    .pic {
+      float: none;
+      margin: 1em auto;
+    }
+    .text {
+      padding: 0.25em 1em 1em 1em;
+    }
+  }
 }
