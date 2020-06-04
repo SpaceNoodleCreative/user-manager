@@ -21,14 +21,15 @@ interface Props {
     zipcode?: string;
     city?: string;
   };
+  selected: boolean;
 }
 
-const Detail = ({ id, name, email, phone, address }: Props) => {
+const Detail = ({ id, name, email, phone, address, selected }: Props) => {
   const streetAddress = address
     ? `${address.suite} ${address.street} ${address.zipcode} ${address.city} `
     : null;
   return (
-    <div className="user-detail">
+    <div className={"user-detail " + (selected && "selected")}>
       <div className="pic">
         {/* <img src={boyIcon} /> */}
         <img src={girlIcon} />

@@ -14,7 +14,7 @@ const List = (props: Props) => {
       {users.map((item, index) => (
         <React.Fragment key={item.id}>
           <ListItem {...item} index={index} />
-          <Detail {...item} />
+          <Detail {...item} index={index} />
         </React.Fragment>
       ))}
     </div>
